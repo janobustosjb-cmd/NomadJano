@@ -10,8 +10,8 @@ const translations = {
     'nav.cta':             'Hablemos',
 
     'hero.badge':          'Disponible para nuevos proyectos',
-    'hero.title':          'Me muevo.',
-    'hero.titleGradient':  'Mis sistemas, no.',
+    'hero.title':          'Yo me muevo,',
+    'hero.titleGradient':  'y mis sistemas se mueven por vos.',
     'hero.subtitle':       'Sistemas digitales que trabajan por ti: más clientes, menos carga, sin que tengas que entender de tecnología.',
     'hero.cta1':           'Hablemos →',
     'hero.cta2':           'Ver cómo funciona',
@@ -99,8 +99,8 @@ const translations = {
     'nav.cta':             'Let\'s talk',
 
     'hero.badge':          'Available for new projects',
-    'hero.title':          'I move.',
-    'hero.titleGradient':  'My systems don\'t.',
+    'hero.title':          'I move,',
+    'hero.titleGradient':  'and my systems move for you.',
     'hero.subtitle':       'Digital systems that work for you: more clients, less burden, no tech knowledge needed.',
     'hero.cta1':           'Let\'s talk →',
     'hero.cta2':           'See how it works',
@@ -188,8 +188,8 @@ const translations = {
     'nav.cta':             'Vamos conversar',
 
     'hero.badge':          'Disponível para novos projetos',
-    'hero.title':          'Eu me movo.',
-    'hero.titleGradient':  'Meus sistemas, não.',
+    'hero.title':          'Eu me movo,',
+    'hero.titleGradient':  'e meus sistemas se movem por você.',
     'hero.subtitle':       'Sistemas digitais que trabalham por você: mais clientes, menos carga, sem precisar entender de tecnologia.',
     'hero.cta1':           'Vamos conversar →',
     'hero.cta2':           'Ver como funciona',
@@ -277,8 +277,8 @@ const translations = {
     'nav.cta':             'Parliamo',
 
     'hero.badge':          'Disponibile per nuovi progetti',
-    'hero.title':          'Mi muovo.',
-    'hero.titleGradient':  'I miei sistemi, no.',
+    'hero.title':          'Mi muovo,',
+    'hero.titleGradient':  'e i miei sistemi si muovono per te.',
     'hero.subtitle':       'Sistemi digitali che lavorano per te: più clienti, meno carico, senza dover capire di tecnologia.',
     'hero.cta1':           'Parliamo →',
     'hero.cta2':           'Come funziona',

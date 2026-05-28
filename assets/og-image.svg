@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#060609"/>
+      <stop offset="100%" style="stop-color:#0e0e1c"/>
+    </linearGradient>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="50%" style="stop-color:#a855f7"/>
+      <stop offset="100%" style="stop-color:#e879f9"/>
+    </linearGradient>
+    <linearGradient id="orb1" cx="50%" cy="50%" r="50%" fx="50%" fy="50%" gradientUnits="objectBoundingBox">
+      <stop offset="0%" style="stop-color:#6d28d9;stop-opacity:0.5"/>
+      <stop offset="100%" style="stop-color:#6d28d9;stop-opacity:0"/>
+    </linearGradient>
+    <radialGradient id="orb2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#7c3aed;stop-opacity:0.35"/>
+      <stop offset="100%" style="stop-color:#7c3aed;stop-opacity:0"/>
+    </radialGradient>
+    <filter id="blur1">
+      <feGaussianBlur stdDeviation="60"/>
+    </filter>
+    <filter id="blur2">
+      <feGaussianBlur stdDeviation="80"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Orbs -->
+  <ellipse cx="1050" cy="120" rx="320" ry="320" fill="url(#orb1)" filter="url(#blur1)"/>
+  <ellipse cx="150" cy="500" rx="260" ry="260" fill="url(#orb2)" filter="url(#blur2)"/>
+
+  <!-- Grid lines -->
+  <g stroke="#8b5cf6" stroke-opacity="0.04" stroke-width="1">
+    <line x1="0" y1="90" x2="1200" y2="90"/>
+    <line x1="0" y1="180" x2="1200" y2="180"/>
+    <line x1="0" y1="270" x2="1200" y2="270"/>
+    <line x1="0" y1="360" x2="1200" y2="360"/>
+    <line x1="0" y1="450" x2="1200" y2="450"/>
+    <line x1="0" y1="540" x2="1200" y2="540"/>
+    <line x1="100" y1="0" x2="100" y2="630"/>
+    <line x1="200" y1="0" x2="200" y2="630"/>
+    <line x1="300" y1="0" x2="300" y2="630"/>
+    <line x1="400" y1="0" x2="400" y2="630"/>
+    <line x1="500" y1="0" x2="500" y2="630"/>
+    <line x1="600" y1="0" x2="600" y2="630"/>
+    <line x1="700" y1="0" x2="700" y2="630"/>
+    <line x1="800" y1="0" x2="800" y2="630"/>
+    <line x1="900" y1="0" x2="900" y2="630"/>
+    <line x1="1000" y1="0" x2="1000" y2="630"/>
+    <line x1="1100" y1="0" x2="1100" y2="630"/>
+  </g>
+
+  <!-- Top accent line -->
+  <rect x="80" y="60" width="120" height="2" fill="url(#grad)" rx="1"/>
+
+  <!-- Badge -->
+  <rect x="80" y="84" width="220" height="32" rx="16" fill="#0e0e1c" stroke="#8b5cf633" stroke-width="1"/>
+  <circle cx="104" cy="100" r="5" fill="#22c55e"/>
+  <text x="120" y="105" font-family="'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="500" fill="#9ca3af">nomadjano.com</text>
+
+  <!-- Main title line 1 -->
+  <text x="80" y="220" font-family="'Helvetica Neue', Arial, sans-serif" font-size="72" font-weight="700" fill="#f0f0f8" letter-spacing="-2">Yo me muevo,</text>
+
+  <!-- Main title line 2 — gradient -->
+  <text x="80" y="310" font-family="'Helvetica Neue', Arial, sans-serif" font-size="72" font-weight="700" fill="url(#grad)" letter-spacing="-2">y mis sistemas</text>
+  <text x="80" y="395" font-family="'Helvetica Neue', Arial, sans-serif" font-size="72" font-weight="700" fill="url(#grad)" letter-spacing="-2">se mueven por vos.</text>
+
+  <!-- Subtitle -->
+  <text x="80" y="470" font-family="'Helvetica Neue', Arial, sans-serif" font-size="22" font-weight="400" fill="#6b7280">Presencia digital · Automatizaciones · Sistemas para hospitalidad</text>
+
+  <!-- Bottom separator -->
+  <rect x="80" y="530" width="1040" height="1" fill="#ffffff0d"/>
+
+  <!-- Footer -->
+  <text x="80" y="568" font-family="'Helvetica Neue', Arial, sans-serif" font-size="18" font-weight="600" fill="#6b7280">NomadJano</text>
+  <text x="1120" y="568" font-family="'Helvetica Neue', Arial, sans-serif" font-size="14" fill="#4b5563" text-anchor="end">nomadjano@gmail.com</text>
+</svg>
