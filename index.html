@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NomadJano — Presencia digital, automatizaciones y sistemas para hoteles, hostels, bares y cafes. Más clientes, menos trabajo.">
+  <meta name="keywords" content="presencia digital, automatizaciones, landing pages, Google Maps, hoteles, hostels, bares, cafes, freelance, n8n, IA">
+  <meta name="author" content="NomadJano">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://nomadjano.com/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nomadjano.com/">
+  <meta property="og:title" content="NomadJano — Me muevo. Mis sistemas, no.">
+  <meta property="og:description" content="Más clientes, menos trabajo. Presencia digital, automatizaciones y sistemas para negocios de hospitalidad.">
+  <meta property="og:image" content="./assets/og-image.jpg">
+  <meta property="og:site_name" content="NomadJano">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="NomadJano — Me muevo. Mis sistemas, no.">
+  <meta name="twitter:description" content="Más clientes, menos trabajo. Presencia digital, automatizaciones y sistemas para negocios de hospitalidad.">
+
+  <title>NomadJano — Me muevo. Mis sistemas, no.</title>
+
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+<body>
+
+  <!-- PROGRESS BAR -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav__container">
+      <a href="#inicio" class="nav__logo">NomadJano</a>
+      <div class="nav__links">
+        <a href="#servicios" data-i18n="nav.services">Servicios</a>
+        <a href="#trabajo" data-i18n="nav.work">Trabajo</a>
+        <a href="#viaje" data-i18n="nav.journey">El viaje</a>
+        <div class="lang-switcher" id="langSwitcher">
+          <button class="lang-btn active" data-lang="es">ES</button>
+          <button class="lang-btn" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="pt">PT</button>
+          <button class="lang-btn" data-lang="it">IT</button>
+        </div>
+        <a href="#contacto" class="nav__cta" data-i18n="nav.cta">Hablemos</a>
+      </div>
+      <button class="nav__menu-btn" id="menuBtn" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <button class="mobile-menu__close" id="closeMenu" aria-label="Cerrar menú">✕</button>
+    <a href="#servicios" class="mobile-menu__link" data-i18n="nav.services">Servicios</a>
+    <a href="#trabajo" class="mobile-menu__link" data-i18n="nav.work">Trabajo</a>
+    <a href="#viaje" class="mobile-menu__link" data-i18n="nav.journey">El viaje</a>
+    <div class="lang-switcher lang-switcher--mobile" id="langSwitcherMobile">
+      <button class="lang-btn active" data-lang="es">ES</button>
+      <button class="lang-btn" data-lang="en">EN</button>
+      <button class="lang-btn" data-lang="pt">PT</button>
+      <button class="lang-btn" data-lang="it">IT</button>
+    </div>
+    <a href="#contacto" class="mobile-menu__link mobile-menu__cta" data-i18n="nav.cta">Hablemos →</a>
+  </div>
+
+  <!-- ======================================
+       HERO
+  ======================================= -->
+  <section class="hero" id="inicio">
+    <div class="hero__bg">
+      <div class="hero__orb hero__orb--1"></div>
+      <div class="hero__orb hero__orb--2"></div>
+      <div class="hero__orb hero__orb--3"></div>
+      <div class="hero__grid"></div>
+    </div>
+
+    <div class="hero__content" id="heroContent">
+      <div class="hero__badge">
+        <span class="hero__badge-dot"></span>
+        <span data-i18n="hero.badge">Disponible para nuevos proyectos</span>
+      </div>
+      <h1 class="hero__title">
+        <span data-i18n="hero.title">Me muevo.</span><br>
+        <span class="hero__title-gradient" data-i18n="hero.titleGradient">Mis sistemas, no.</span>
+      </h1>
+      <p class="hero__subtitle" data-i18n="hero.subtitle">
+        Sistemas digitales que trabajan por ti: más clientes, menos carga, sin que tengas que entender de tecnología.
+      </p>
+      <div class="hero__actions">
+        <a href="#contacto" class="btn btn--primary" data-i18n="hero.cta1">Hablemos →</a>
+        <a href="#servicios" class="btn btn--ghost" data-i18n="hero.cta2">Ver cómo funciona</a>
+      </div>
+    </div>
+
+    <div class="hero__scroll-indicator">
+      <span>scroll</span>
+      <div class="hero__scroll-line"></div>
+    </div>
+  </section>
+
+  <div class="section-divider" role="separator"></div>
+
+  <!-- ======================================
+       MANIFIESTO
+  ======================================= -->
+  <section class="manifiesto">
+    <div class="container">
+      <div class="reveal-fade">
+        <p class="manifiesto__text" data-i18n-html="manifiesto.text">
+          "No vendo tecnología.<br>
+          Vendo <em>tiempo libre</em>, más clientes<br>
+          y menos dolores de cabeza."
+        </p>
+        <span class="manifiesto__author" data-i18n="manifiesto.author">— Jano, en algún rincón del mundo</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider" role="separator"></div>
+
+  <!-- ======================================
+       SERVICIOS
+  ======================================= -->
+  <section class="servicios" id="servicios">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label reveal-up" data-i18n="s01.label">Lo que consigues</span>
+        <h2 class="section-title reveal-clip">
+          <span data-i18n="s01.title">Tu negocio en piloto automático.</span><br>
+          <span class="gradient-text" data-i18n="s01.titleGradient">Sin tecnicismos.</span>
+        </h2>
+        <p class="section-subtitle reveal-up" data-i18n="s01.subtitle">
+          No importa si tenés un hostel en Buenos Aires o un café en Lisboa.
+          Construyo los sistemas para que crezcas sin que dependas de mí para siempre.
+        </p>
+      </div>
+
+      <div class="servicios__grid">
+        <div class="servicio-card">
+          <div class="servicio-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
+          <div class="servicio-card__number">01</div>
+          <h3 class="servicio-card__title">
+            <span data-i18n="srv01.title">Más clientes,</span><br>
+            <span data-i18n="srv01.titleLine2">sin más esfuerzo</span>
+          </h3>
+          <p class="servicio-card__desc" data-i18n="srv01.desc">
+            Aparecé donde están tus clientes. Web que convierte, Google Maps optimizado, presencia impecable que genera confianza desde el primer clic.
+          </p>
+          <ul class="servicio-card__tags">
+            <li data-i18n="srv01.tag1">Más reservas directas</li>
+            <li data-i18n="srv01.tag2">Primero en búsquedas locales</li>
+            <li data-i18n="srv01.tag3">Web que vende mientras dormís</li>
+          </ul>
+        </div>
+
+        <div class="servicio-card servicio-card--featured">
+          <div class="servicio-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+            </svg>
+          </div>
+          <div class="servicio-card__number">02</div>
+          <h3 class="servicio-card__title">
+            <span data-i18n="srv02.title">Menos trabajo,</span><br>
+            <span data-i18n="srv02.titleLine2">mismos resultados</span>
+          </h3>
+          <p class="servicio-card__desc" data-i18n="srv02.desc">
+            Confirmaciones, seguimientos, publicaciones, reportes. Todo lo repetitivo, automatizado. Recuperás horas cada semana sin contratar a nadie.
+          </p>
+          <ul class="servicio-card__tags">
+            <li data-i18n="srv02.tag1">3–5 horas libres por semana</li>
+            <li data-i18n="srv02.tag2">Menos errores humanos</li>
+            <li data-i18n="srv02.tag3">Operación sin fricciones</li>
+          </ul>
+        </div>
+
+        <div class="servicio-card">
+          <div class="servicio-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+              <line x1="8" y1="21" x2="16" y2="21"/>
+              <line x1="12" y1="17" x2="12" y2="21"/>
+            </svg>
+          </div>
+          <div class="servicio-card__number">03</div>
+          <h3 class="servicio-card__title">
+            <span data-i18n="srv03.title">Presencia activa</span><br>
+            <span data-i18n="srv03.titleLine2">sin levantar un dedo</span>
+          </h3>
+          <p class="servicio-card__desc" data-i18n="srv03.desc">
+            Tu negocio siempre activo online. Contenido generado y publicado con sistemas inteligentes que hablan con la voz de tu marca, todos los días.
+          </p>
+          <ul class="servicio-card__tags">
+            <li data-i18n="srv03.tag1">Contenido diario sin esfuerzo</li>
+            <li data-i18n="srv03.tag2">Respuestas automáticas 24/7</li>
+            <li data-i18n="srv03.tag3">Marca siempre presente</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider" role="separator"></div>
+
+  <!-- ======================================
+       NÚMEROS
+  ======================================= -->
+  <section class="numeros">
+    <div class="container">
+      <div class="numeros__grid">
+        <div class="numero reveal-up">
+          <span class="numero__value" data-count-target="40" data-count-prefix="+" data-count-suffix="%" data-i18n="num01.value">+40%</span>
+          <span class="numero__label" data-i18n="num01.label">más visibilidad con presencia digital optimizada</span>
+        </div>
+        <div class="numero reveal-up">
+          <span class="numero__value numero__value--typewriter" data-i18n="num02.value">3–5h</span>
+          <span class="numero__label" data-i18n="num02.label">ahorradas por semana con flujos automatizados</span>
+        </div>
+        <div class="numero reveal-up">
+          <span class="numero__value" data-count-target="0" data-i18n="num03.value">0</span>
+          <span class="numero__label" data-i18n="num03.label">tecnicismos que tenés que entender</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider" role="separator"></div>
+
+  <!-- ======================================
+       TRABAJO / PORTFOLIO
+  ======================================= -->
+  <section class="trabajo" id="trabajo">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label reveal-up" data-i18n="work.label">El trabajo</span>
+        <h2 class="section-title reveal-clip">
+          <span data-i18n="work.title">Sistemas construidos.</span><br>
+          <span data-i18n="work.titleLine2">Resultados reales.</span>
+        </h2>
+        <p class="section-subtitle reveal-up" data-i18n="work.subtitle">Cada proyecto, un problema real resuelto.</p>
+      </div>
+
+      <div class="trabajo__grid">
+
+        <div class="proyecto-card">
+          <div class="proyecto-card__visual">
+            <div class="proyecto-card__placeholder-inner">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="3" width="20" height="14" rx="2"/>
+                <line x1="8" y1="21" x2="16" y2="21"/>
+                <line x1="12" y1="17" x2="12" y2="21"/>
+              </svg>
+              <span>Landing Page</span>
+            </div>
+          </div>
+          <div class="proyecto-card__content">
+            <div class="proyecto-card__tags"><span class="tag">Web</span><span class="tag">Conversión</span></div>
+            <h3 class="proyecto-card__title">Landing page para hostel boutique</h3>
+            <p class="proyecto-card__desc">Diseño + reservas directas integradas. Redujo comisiones de OTAs en un 30%.</p>
+          </div>
+        </div>
+
+        <div class="proyecto-card proyecto-card--large">
+          <div class="proyecto-card__visual">
+            <div class="proyecto-card__placeholder-inner">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+              </svg>
+              <span>Automatización</span>
+            </div>
+          </div>
+          <div class="proyecto-card__content">
+            <div class="proyecto-card__tags"><span class="tag">n8n</span><span class="tag">IA</span><span class="tag">WhatsApp</span></div>
+            <h3 class="proyecto-card__title">Sistema de atención automática 24/7</h3>
+            <p class="proyecto-card__desc">Responde consultas, hace seguimientos y confirma reservas. El equipo dejó de perder horas en mensajes repetitivos.</p>
+          </div>
+        </div>
+
+        <div class="proyecto-card">
+          <div class="proyecto-card__visual">
+            <div class="proyecto-card__placeholder-inner">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+              <span>Presencia Digital</span>
+            </div>
+          </div>
+          <div class="proyecto-card__content">
+            <div class="proyecto-card__tags"><span class="tag">Google Maps</span><span class="tag">SEO Local</span></div>
+            <h3 class="proyecto-card__title">De invisible a primero en búsquedas locales</h3>
+            <p class="proyecto-card__desc">Optimización completa en 30 días. Triplicaron las vistas del perfil.</p>
+          </div>
+        </div>
+
+        <a href="https://luchitos.vercel.app/" target="_blank" rel="noopener noreferrer" class="proyecto-card proyecto-card--live">
+          <div class="proyecto-card__visual proyecto-card__visual--screenshot">
+            <div class="proyecto-card__skeleton"></div>
+            <img
+              src="https://api.microlink.io/?url=https%3A%2F%2Fluchitos.vercel.app%2F&screenshot=true&meta=false&embed=screenshot.url"
+              alt="Preview Luchito's"
+              class="proyecto-card__screenshot"
+              loading="lazy"
+              onerror="this.style.display='none'"
+            >
+            <span class="proyecto-card__live-badge">
+              <span class="proyecto-card__live-dot"></span>
+              Live
+            </span>
+          </div>
+          <div class="proyecto-card__content">
+            <div class="proyecto-card__tags"><span class="tag">Web</span><span class="tag">Gastronomía</span></div>
+            <h3 class="proyecto-card__title">Luchito's</h3>
+            <p class="proyecto-card__desc">Landing page completa para negocio gastronómico. Diseño, menú y contacto directo.</p>
+          </div>
+        </a>
+
+        <a href="https://lucesitapastas.vercel.app/" target="_blank" rel="noopener noreferrer" class="proyecto-card proyecto-card--live">
+          <div class="proyecto-card__visual proyecto-card__visual--screenshot">
+            <div class="proyecto-card__skeleton"></div>
+            <img
+              src="https://api.microlink.io/?url=https%3A%2F%2Flucesitapastas.vercel.app%2F&screenshot=true&meta=false&embed=screenshot.url"
+              alt="Preview Lucesita Pastas"
+              class="proyecto-card__screenshot"
+              loading="lazy"
+              onerror="this.style.display='none'"
+            >
+            <span class="proyecto-card__live-badge">
+              <span class="proyecto-card__live-dot"></span>
+              Live
+            </span>
+          </div>
+          <div class="proyecto-card__content">
+            <div class="proyecto-card__tags"><span class="tag">Web</span><span class="tag">Pastas</span></div>
+            <h3 class="proyecto-card__title">Lucesita Pastas</h3>
+            <p class="proyecto-card__desc">Presencia digital para casa de pastas artesanales. Menú, pedidos y branding completo.</p>
+          </div>
+        </a>
+
+        <a href="https://tallerjp-flax.vercel.app/" target="_blank" rel="noopener noreferrer" class="proyecto-card proyecto-card--live">
+          <div class="proyecto-card__visual proyecto-card__visual--screenshot">
+            <div class="proyecto-card__skeleton"></div>
+            <img
+              src="https://api.microlink.io/?url=https%3A%2F%2Ftallerjp-flax.vercel.app%2F&screenshot=true&meta=false&embed=screenshot.url"
+              alt="Preview Taller JP"
+              class="proyecto-card__screenshot"
+              loading="lazy"
+              onerror="this.style.display='none'"
+            >
+            <span class="proyecto-card__live-badge">
+              <span class="proyecto-card__live-dot"></span>
+              Live
+            </span>
+          </div>
+          <div class="proyecto-card__content">
+            <div class="proyecto-card__tags"><span class="tag">Web</span><span class="tag">Taller</span></div>
+            <h3 class="proyecto-card__title">Taller JP</h3>
+            <p class="proyecto-card__desc">Landing page para taller de servicios. Presentación clara, contacto y servicios destacados.</p>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider" role="separator"></div>
+
+  <!-- ======================================
+       EL VIAJE
+  ======================================= -->
+  <section class="viaje" id="viaje">
+    <div class="viaje__bg">
+      <div class="viaje__orb"></div>
+    </div>
+    <div class="container">
+      <div class="viaje__content">
+        <div class="viaje__text reveal-up">
+          <span class="section-label" data-i18n="journey.label">El viaje</span>
+          <h2 class="section-title reveal-clip">
+            <span data-i18n="journey.title">Una vida construida</span><br>
+            <span class="gradient-text" data-i18n="journey.titleGradient">en movimiento</span>
+          </h2>
+          <p class="viaje__desc" data-i18n="journey.desc1">
+            No trabajo desde una oficina. Trabajo desde hostels, cafés con buena conexión y rincones inesperados del mundo. En YouTube documento el proceso: los sistemas que construyo, los lugares que habito, las lecciones que aprendo.
+          </p>
+          <p class="viaje__desc" data-i18n="journey.desc2">
+            No es un canal de "hacerse rico online". Es el diario honesto de alguien construyendo una vida diferente, a su manera, con tecnología e internet.
+          </p>
+          <div class="viaje__actions">
+            <a href="https://youtube.com/@nomadjano" target="_blank" rel="noopener noreferrer" class="btn btn--primary" data-i18n="journey.btn">Ver el canal →</a>
+            <span class="viaje__badge">
+              <span class="viaje__badge-dot"></span>
+              <span data-i18n="journey.badge">Pronto disponible</span>
+            </span>
+          </div>
+        </div>
+        <div class="viaje__visual reveal-up">
+          <div class="viaje__card">
+            <div class="viaje__card-inner">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.97C18.88 4 12 4 12 4s-6.88 0-8.59.45A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.4a2.78 2.78 0 0 0 1.95-1.97A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/>
+                <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/>
+              </svg>
+              <span data-i18n="journey.cardTitle">Canal de YouTube</span>
+              <small data-i18n="journey.cardSoon">próximamente</small>
+            </div>
+          </div>
+          <div class="viaje__stats">
+            <div class="viaje__stat">
+              <strong data-i18n="journey.stat1title">Blog</strong>
+              <span data-i18n="journey.stat1sub">El viaje documentado</span>
+            </div>
+            <div class="viaje__stat">
+              <strong data-i18n="journey.stat2title">Sistemas</strong>
+              <span data-i18n="journey.stat2sub">Detrás de cámara</span>
+            </div>
+            <div class="viaje__stat">
+              <strong data-i18n="journey.stat3title">Honesto</strong>
+              <span data-i18n="journey.stat3sub">Sin filtros</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider" role="separator"></div>
+
+  <!-- ======================================
+       CONTACTO
+  ======================================= -->
+  <section class="contacto" id="contacto">
+    <div class="container">
+      <div class="contacto__inner reveal-up">
+        <span class="section-label" data-i18n="contact.label">¿Conectamos?</span>
+        <h2 class="contacto__title">
+          <span data-i18n="contact.title">¿Tu negocio necesita crecer</span><br>
+          <span class="gradient-text" data-i18n="contact.titleGradient">sin complicarte la vida?</span>
+        </h2>
+        <p class="contacto__desc" data-i18n="contact.desc">
+          Cuéntame qué tenés, qué querés y cómo puedo ayudarte.<br>
+          Sin presiones, sin compromisos. Solo una conversación real.
+        </p>
+
+        <div class="contacto__options">
+          <a href="mailto:nomadjano@gmail.com" class="contacto-option">
+            <div class="contacto-option__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+            </div>
+            <div class="contacto-option__text">
+              <span class="contacto-option__label" data-i18n="contact.email.label">Email directo</span>
+              <span class="contacto-option__value" data-i18n="contact.email.value">nomadjano@gmail.com</span>
+            </div>
+            <span class="contacto-option__arrow">→</span>
+          </a>
+
+          <a href="https://instagram.com/nomadjano" target="_blank" rel="noopener noreferrer" class="contacto-option">
+            <div class="contacto-option__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+              </svg>
+            </div>
+            <div class="contacto-option__text">
+              <span class="contacto-option__label" data-i18n="contact.ig.label">Instagram</span>
+              <span class="contacto-option__value" data-i18n="contact.ig.value">@nomadjano</span>
+            </div>
+            <span class="contacto-option__arrow">→</span>
+          </a>
+        </div>
+
+        <p class="contacto__micro" data-i18n="contact.micro">Respondo en menos de 24h. Generalmente mucho antes.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================
+       FOOTER
+  ======================================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__content">
+        <div class="footer__brand">
+          <a href="#inicio" class="footer__logo">NomadJano</a>
+          <p class="footer__tagline" data-i18n="footer.tagline">Sistemas digitales para negocios que quieren crecer.</p>
+        </div>
+        <nav class="footer__nav" aria-label="Footer navigation">
+          <a href="#servicios" data-i18n="nav.services">Servicios</a>
+          <a href="#trabajo" data-i18n="nav.work">Trabajo</a>
+          <a href="#viaje" data-i18n="nav.journey">El viaje</a>
+          <a href="#contacto" data-i18n="nav.cta">Hablemos</a>
+        </nav>
+        <div class="footer__social">
+          <a href="mailto:nomadjano@gmail.com" aria-label="Email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+          </a>
+          <a href="https://youtube.com/@nomadjano" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18">
+              <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.97C18.88 4 12 4 12 4s-6.88 0-8.59.45A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.4a2.78 2.78 0 0 0 1.95-1.97A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/>
+              <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/>
+            </svg>
+          </a>
+          <a href="https://instagram.com/nomadjano" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span data-i18n="footer.copyright">© 2025 NomadJano</span>
+        <span class="footer__separator">·</span>
+        <span data-i18n="footer.made">Hecho desde algún rincón del mundo</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./assets/js/i18n.js"></script>
+  <script src="./assets/js/main.js"></script>
+</body>
+</html>
