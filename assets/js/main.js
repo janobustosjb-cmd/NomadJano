@@ -271,6 +271,108 @@
   sections.forEach((s) => sectionObserver.observe(s));
 
   /* -----------------------------------------------
+     PACK BUILDER
+  ----------------------------------------------- */
+
+  const packItems      = document.querySelectorAll('.pack-item:not(.pack-item--radio)');
+  const packRadios     = document.querySelectorAll('input[name="pack-mant"]');
+  const packTotalEl    = document.getElementById('packTotalVal');
+  const packMantEl     = document.getElementById('packMantVal');
+  const packLinesEl    = document.getElementById('packLines');
+  const packEmptyEl    = document.getElementById('packEmpty');
+  const packMantCat    = document.getElementById('pack-mant-category');
+  const packMantRow    = document.getElementById('pack-mant-row');
+
+  function updatePack() {
+    const selected    = document.querySelectorAll('.pack-item.pack-item--selected:not(.pack-item--radio)');
+    const auditIds    = ['audit-seo', 'audit-meta', 'audit-full'];
+    const hasNonAudit = [...selected].some((el) => !auditIds.includes(el.dataset.id));
+    const onlyAudits  = selected.length > 0 && !hasNonAudit;
+
+    // Show/hide maintenance based on selection
+    if (packMantCat) packMantCat.style.display = onlyAudits ? 'none' : '';
+    if (packMantRow) packMantRow.style.display  = onlyAudits ? 'none' : '';
+
+    let total = 0;
+    packLinesEl.innerHTML = '';
+
+    selected.forEach((item) => {
+      total += parseInt(item.dataset.price, 10);
+      const name  = item.querySelector('.pack-item__name').textContent;
+      const price = item.dataset.price;
+      const line  = document.createElement('div');
+      line.className = 'pack-summary__line';
+      line.innerHTML = `<span class="pack-summary__line-name">${name}</span><span class="pack-summary__line-price">$${price}</span>`;
+      packLinesEl.appendChild(line);
+    });
+
+    if (selected.length === 0) {
+      const emptyText = document.createElement('p');
+      emptyText.className = 'pack-summary__empty';
+      emptyText.textContent = packEmptyEl
+        ? packEmptyEl.textContent
+        : 'Seleccioná servicios para ver el resumen.';
+      packLinesEl.appendChild(emptyText);
+    }
+
+    const checkedRadio = document.querySelector('input[name="pack-mant"]:checked');
+    const mantVal      = checkedRadio ? checkedRadio.value : '60';
+
+    packTotalEl.textContent = total > 0 ? '$' + total.toLocaleString('es') : '$0';
+    if (!onlyAudits) packMantEl.textContent = '$' + mantVal + '/mes';
+  }
+
+  // Toggle service items
+  packItems.forEach((item) => {
+    item.addEventListener('click', () => {
+      item.classList.toggle('pack-item--selected');
+      updatePack();
+    });
+  });
+
+  // Radio mantenimiento
+  packRadios.forEach((radio) => {
+    radio.addEventListener('change', () => {
+      document.querySelectorAll('.pack-item--radio').forEach((label) => {
+        label.classList.toggle('pack-item--selected', label.querySelector('input').checked);
+      });
+      updatePack();
+    });
+  });
+
+  // Email CTA — pre-compose with pack summary
+  const packEmailBtn = document.getElementById('packEmailBtn');
+  if (packEmailBtn) {
+    packEmailBtn.addEventListener('click', () => {
+      const selected = document.querySelectorAll('.pack-item.pack-item--selected:not(.pack-item--radio)');
+      if (selected.length === 0) return;
+
+      let total = 0;
+      const lines = [];
+      selected.forEach((item) => {
+        const name  = item.querySelector('.pack-item__name').textContent;
+        const price = parseInt(item.dataset.price, 10);
+        total += price;
+        lines.push(`• ${name} ($${price})`);
+      });
+
+      const checkedRadio = document.querySelector('input[name="pack-mant"]:checked');
+      const mantVal   = checkedRadio ? checkedRadio.value : '60';
+      const mantLabel = checkedRadio ? checkedRadio.closest('.pack-item').querySelector('.pack-item__name').textContent : 'Mantenimiento Base';
+
+      const subject = encodeURIComponent('Mi pack personalizado — NomadJano');
+      const body    = encodeURIComponent(
+        `Hola! Armé mi pack en nomadjano.com:\n\n${lines.join('\n')}\n\nTotal sistema: $${total}\n${mantLabel}: $${mantVal}/mes\n\n¿Podés darme más información?`
+      );
+
+      window.open(`mailto:nomadjano@gmail.com?subject=${subject}&body=${body}`, '_blank');
+    });
+  }
+
+  // Init
+  updatePack();
+
+  /* -----------------------------------------------
      SCREENSHOT IMAGES — fade in on load
   ----------------------------------------------- */
 
