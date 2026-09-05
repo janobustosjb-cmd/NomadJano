@@ -68,16 +68,17 @@ const translations = {
     'journey.titleGradient': 'en movimiento',
     'journey.desc1':       'No trabajo desde una oficina. Trabajo desde hostels, cafés con buena conexión y rincones inesperados del mundo. En YouTube documento el proceso: los sistemas que construyo, los lugares que habito, las lecciones que aprendo.',
     'journey.desc2':       'No es un canal de "hacerse rico online". Es el diario honesto de alguien construyendo una vida diferente, a su manera, con tecnología e internet.',
+    'journey.desc3':       'Y si te preguntás si voy a estar disponible: los sistemas que construyo funcionan solos aunque yo esté cruzando una frontera. Respondo en menos de 24h desde donde esté — esa es exactamente la prueba de que lo que te entrego funciona.',
     'journey.btn':         'Ver el canal →',
     'journey.badge':       'Pronto disponible',
     'journey.cardTitle':   'Canal de YouTube',
     'journey.cardSoon':    'próximamente',
-    'journey.stat1title':  'Blog',
-    'journey.stat1sub':    'El viaje documentado',
-    'journey.stat2title':  'Sistemas',
-    'journey.stat2sub':    'Detrás de cámara',
-    'journey.stat3title':  'Honesto',
-    'journey.stat3sub':    'Sin filtros',
+    'journey.stat1title':  '<24h',
+    'journey.stat1sub':    'Tiempo de respuesta garantizado',
+    'journey.stat2title':  '100%',
+    'journey.stat2sub':    'Proyectos entregados en plazo',
+    'journey.stat3title':  '0',
+    'journey.stat3sub':    'Sistemas caídos sin aviso',
 
     'contact.label':       '¿Conectamos?',
     'contact.title':       '¿Tu negocio necesita crecer',
@@ -89,7 +90,7 @@ const translations = {
     'contact.micro':       'Respondo en menos de 24h. Generalmente mucho antes.',
 
     'footer.tagline':      'Sistemas digitales para negocios que quieren crecer.',
-    'footer.copyright':    '© 2025 NomadJano',
+    'footer.copyright':    '© 2026 NomadJano',
     'footer.made':         'Hecho desde algún rincón del mundo',
 
     'prices.label':        'Precios',
@@ -188,7 +189,7 @@ const translations = {
     'pack.item.web.desc':        'Diseño y desarrollo, optimizada para convertir',
     'pack.item.maps.name':       'Google Maps + SEO local',
     'pack.item.maps.desc':       'Aparecer primero en búsquedas de tu zona',
-    'pack.item.wpp.name':        'Bot WhatsApp (n8n)',
+    'pack.item.wpp.name':        'Bot WhatsApp',
     'pack.item.wpp.desc':        'Responde consultas y reservas 24/7',
     'pack.item.email.name':      'Email automatizado',
     'pack.item.email.desc':      'Secuencias, seguimiento y confirmaciones',
@@ -203,7 +204,7 @@ const translations = {
     'pack.item.auditFull.name':  'Auditoría completa de negocio',
     'pack.item.auditFull.desc':  'SEO + Meta Ads + presencia digital + recomendaciones',
 
-    'contact.desc':        'Empezamos con una llamada de 30 minutos. Te cuento exactamente qué haría para tu caso. Sin compromiso.',
+    'contact.desc':        '30 minutos donde miro tu negocio en concreto. Sin pitch, sin PowerPoint. Te digo honestamente qué haría — y si no tiene sentido trabajar juntos, también te lo digo.',
     'contact.calendlyLabel': 'Llamada gratuita · 30 minutos',
     'contact.calendlyValue': 'Elegí día y horario →',
     'contact.alt':         'o si preferís escribir primero',
@@ -278,12 +279,13 @@ const translations = {
     'journey.badge':       'Coming soon',
     'journey.cardTitle':   'YouTube Channel',
     'journey.cardSoon':    'coming soon',
-    'journey.stat1title':  'Blog',
-    'journey.stat1sub':    'The journey documented',
-    'journey.stat2title':  'Systems',
-    'journey.stat2sub':    'Behind the scenes',
-    'journey.stat3title':  'Honest',
-    'journey.stat3sub':    'No filters',
+    'journey.desc3':       'And if you\'re wondering whether I\'ll be available: the systems I build run on their own even when I\'m crossing a border. I reply within 24h from wherever I am — that\'s exactly the proof that what I deliver works.',
+    'journey.stat1title':  '<24h',
+    'journey.stat1sub':    'Guaranteed response time',
+    'journey.stat2title':  '100%',
+    'journey.stat2sub':    'Projects delivered on time',
+    'journey.stat3title':  '0',
+    'journey.stat3sub':    'Systems down without notice',
 
     'contact.label':       'Connect?',
     'contact.title':       'Does your business need to grow',
@@ -296,7 +298,7 @@ const translations = {
     'contact.micro':       'I reply within 24h. Usually much sooner.',
 
     'footer.tagline':      'Digital systems for businesses that want to grow.',
-    'footer.copyright':    '© 2025 NomadJano',
+    'footer.copyright':    '© 2026 NomadJano',
     'footer.made':         'Made from somewhere in the world',
 
     'prices.label':        'Pricing',
@@ -395,7 +397,7 @@ const translations = {
     'pack.item.web.desc':        'Design and development, optimized to convert',
     'pack.item.maps.name':       'Google Maps + Local SEO',
     'pack.item.maps.desc':       'Show up first in searches in your area',
-    'pack.item.wpp.name':        'WhatsApp Bot (n8n)',
+    'pack.item.wpp.name':        'WhatsApp Bot',
     'pack.item.wpp.desc':        'Answers questions and bookings 24/7',
     'pack.item.email.name':      'Automated email',
     'pack.item.email.desc':      'Sequences, follow-ups and confirmations',
@@ -410,7 +412,7 @@ const translations = {
     'pack.item.auditFull.name':  'Full business audit',
     'pack.item.auditFull.desc':  'SEO + Meta Ads + digital presence + recommendations',
 
-    'contact.desc':        'We start with a 30-minute call. I\'ll tell you exactly what I\'d do for your case. No commitment.',
+    'contact.desc':        '30 minutes looking at your actual business. No pitch, no slide decks. I\'ll tell you honestly what I\'d do — and if it doesn\'t make sense to work together, I\'ll tell you that too.',
     'contact.calendlyLabel': 'Free call · 30 minutes',
     'contact.calendlyValue': 'Choose a day and time →',
     'contact.alt':         'or if you prefer to write first',
@@ -485,12 +487,13 @@ const translations = {
     'journey.badge':       'Em breve',
     'journey.cardTitle':   'Canal do YouTube',
     'journey.cardSoon':    'em breve',
-    'journey.stat1title':  'Blog',
-    'journey.stat1sub':    'A viagem documentada',
-    'journey.stat2title':  'Sistemas',
-    'journey.stat2sub':    'Bastidores',
-    'journey.stat3title':  'Honesto',
-    'journey.stat3sub':    'Sem filtros',
+    'journey.desc3':       'E se você está se perguntando se vou estar disponível: os sistemas que construo funcionam sozinhos mesmo quando estou cruzando uma fronteira. Respondo em menos de 24h de onde estiver — essa é exatamente a prova de que o que entrego funciona.',
+    'journey.stat1title':  '<24h',
+    'journey.stat1sub':    'Tempo de resposta garantido',
+    'journey.stat2title':  '100%',
+    'journey.stat2sub':    'Projetos entregues no prazo',
+    'journey.stat3title':  '0',
+    'journey.stat3sub':    'Sistemas caídos sem aviso',
 
     'contact.label':       'Conectar?',
     'contact.title':       'Seu negócio precisa crescer',
@@ -503,7 +506,7 @@ const translations = {
     'contact.micro':       'Respondo em menos de 24h. Geralmente muito antes.',
 
     'footer.tagline':      'Sistemas digitais para negócios que querem crescer.',
-    'footer.copyright':    '© 2025 NomadJano',
+    'footer.copyright':    '© 2026 NomadJano',
     'footer.made':         'Feito de algum canto do mundo',
 
     'prices.label':        'Preços',
@@ -602,7 +605,7 @@ const translations = {
     'pack.item.web.desc':        'Design e desenvolvimento, otimizado para converter',
     'pack.item.maps.name':       'Google Maps + SEO local',
     'pack.item.maps.desc':       'Aparecer primeiro nas buscas da sua região',
-    'pack.item.wpp.name':        'Bot WhatsApp (n8n)',
+    'pack.item.wpp.name':        'Bot WhatsApp',
     'pack.item.wpp.desc':        'Responde consultas e reservas 24/7',
     'pack.item.email.name':      'Email automatizado',
     'pack.item.email.desc':      'Sequências, follow-up e confirmações',
@@ -617,7 +620,7 @@ const translations = {
     'pack.item.auditFull.name':  'Auditoria completa do negócio',
     'pack.item.auditFull.desc':  'SEO + Meta Ads + presença digital + recomendações',
 
-    'contact.desc':        'Começamos com uma chamada de 30 minutos. Te conto exatamente o que faria para o seu caso. Sem compromisso.',
+    'contact.desc':        '30 minutos olhando para o seu negócio de verdade. Sem pitch, sem slides. Te digo honestamente o que faria — e se não fizer sentido trabalharmos juntos, também te digo.',
     'contact.calendlyLabel': 'Chamada gratuita · 30 minutos',
     'contact.calendlyValue': 'Escolha dia e horário →',
     'contact.alt':         'ou se preferir escrever primeiro',
@@ -692,12 +695,13 @@ const translations = {
     'journey.badge':       'Presto disponibile',
     'journey.cardTitle':   'Canale YouTube',
     'journey.cardSoon':    'presto',
-    'journey.stat1title':  'Blog',
-    'journey.stat1sub':    'Il viaggio documentato',
-    'journey.stat2title':  'Sistemi',
-    'journey.stat2sub':    'Dietro le quinte',
-    'journey.stat3title':  'Onesto',
-    'journey.stat3sub':    'Senza filtri',
+    'journey.desc3':       'E se ti stai chiedendo se sarò disponibile: i sistemi che costruisco funzionano da soli anche quando sto attraversando un confine. Rispondo entro 24h da dove mi trovo — questa è esattamente la prova che quello che consegno funziona.',
+    'journey.stat1title':  '<24h',
+    'journey.stat1sub':    'Tempo di risposta garantito',
+    'journey.stat2title':  '100%',
+    'journey.stat2sub':    'Progetti consegnati nei tempi',
+    'journey.stat3title':  '0',
+    'journey.stat3sub':    'Sistemi caduti senza avviso',
 
     'contact.label':       'Connettiamoci?',
     'contact.title':       'Il tuo business ha bisogno di crescere',
@@ -710,7 +714,7 @@ const translations = {
     'contact.micro':       'Rispondo entro 24h. Di solito molto prima.',
 
     'footer.tagline':      'Sistemi digitali per business che vogliono crescere.',
-    'footer.copyright':    '© 2025 NomadJano',
+    'footer.copyright':    '© 2026 NomadJano',
     'footer.made':         'Fatto da qualche angolo del mondo',
 
     'prices.label':        'Prezzi',
@@ -809,7 +813,7 @@ const translations = {
     'pack.item.web.desc':        'Design e sviluppo, ottimizzato per convertire',
     'pack.item.maps.name':       'Google Maps + SEO locale',
     'pack.item.maps.desc':       'Apparire per primo nelle ricerche della tua zona',
-    'pack.item.wpp.name':        'Bot WhatsApp (n8n)',
+    'pack.item.wpp.name':        'Bot WhatsApp',
     'pack.item.wpp.desc':        'Risponde a domande e prenotazioni 24/7',
     'pack.item.email.name':      'Email automatizzata',
     'pack.item.email.desc':      'Sequenze, follow-up e conferme',
@@ -824,7 +828,7 @@ const translations = {
     'pack.item.auditFull.name':  'Audit completo del business',
     'pack.item.auditFull.desc':  'SEO + Meta Ads + presenza digitale + raccomandazioni',
 
-    'contact.desc':        'Iniziamo con una chiamata di 30 minuti. Ti dico esattamente cosa farei per il tuo caso. Senza impegni.',
+    'contact.desc':        '30 minuti dedicati al tuo business specifico. Niente pitch, niente slide. Ti dico onestamente cosa farei — e se non ha senso lavorare insieme, te lo dico anche quello.',
     'contact.calendlyLabel': 'Chiamata gratuita · 30 minuti',
     'contact.calendlyValue': 'Scegli giorno e orario →',
     'contact.alt':         'o se preferisci scrivere prima',
@@ -859,6 +863,10 @@ function setLanguage(lang) {
     btn.classList.toggle('active', btn.dataset.lang === lang);
   });
 
+  // Update dropdown trigger label
+  const codeEl = document.getElementById('langCurrentCode');
+  if (codeEl) codeEl.textContent = lang.toUpperCase();
+
   // Persist + update html[lang]
   localStorage.setItem('nj-lang', lang);
   document.documentElement.setAttribute('lang', lang);
@@ -873,6 +881,33 @@ document.addEventListener('DOMContentLoaded', () => {
   setLanguage(saved);
 
   document.querySelectorAll('.lang-btn').forEach((btn) => {
-    btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
+    btn.addEventListener('click', () => {
+      setLanguage(btn.dataset.lang);
+      // Close dropdown after selection
+      const dropdown = document.getElementById('langSwitcher');
+      if (dropdown) {
+        dropdown.classList.remove('open');
+        const trigger = document.getElementById('langTrigger');
+        if (trigger) trigger.setAttribute('aria-expanded', 'false');
+      }
+    });
   });
+
+  // Dropdown toggle
+  const trigger = document.getElementById('langTrigger');
+  const dropdown = document.getElementById('langSwitcher');
+  if (trigger && dropdown) {
+    trigger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = dropdown.classList.toggle('open');
+      trigger.setAttribute('aria-expanded', isOpen);
+    });
+
+    document.addEventListener('click', () => {
+      dropdown.classList.remove('open');
+      trigger.setAttribute('aria-expanded', 'false');
+    });
+
+    dropdown.addEventListener('click', (e) => e.stopPropagation());
+  }
 });

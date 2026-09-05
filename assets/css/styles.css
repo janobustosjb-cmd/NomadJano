@@ -186,6 +186,12 @@ body::before {
   background: var(--violet-subtle);
 }
 
+.btn--disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
 /* ------------------------------------------------
    TAGS
    ------------------------------------------------ */
@@ -1097,7 +1103,7 @@ body::before {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: clamp(48px, 8vw, 100px);
-  align-items: center;
+  align-items: start;
 }
 
 .viaje__desc {
@@ -1105,6 +1111,13 @@ body::before {
   color: var(--text-secondary);
   line-height: 1.85;
   margin-bottom: 18px;
+}
+
+.viaje__desc--trust {
+  border-left: 2px solid var(--violet-500);
+  padding-left: 14px;
+  color: var(--text-primary);
+  opacity: 0.85;
 }
 
 .viaje__actions {
@@ -1671,7 +1684,7 @@ body::before {
 }
 
 /* ================================================
-   NEW — SCROLL PROGRESS BAR
+   SCROLL PROGRESS BAR — CYBER
    ================================================ */
 
 .scroll-progress {
@@ -1680,12 +1693,63 @@ body::before {
   left: 0;
   right: 0;
   height: 2px;
-  background: linear-gradient(90deg, var(--violet-700), var(--violet-400), #e879f9);
+  background: linear-gradient(90deg,
+    var(--violet-700) 0%,
+    var(--violet-500) 40%,
+    #a78bfa 70%,
+    #c084fc 100%
+  );
   transform-origin: left center;
   transform: scaleX(0);
   z-index: 200;
   pointer-events: none;
-  transition: transform 0.08s linear;
+  transition: transform 0.1s linear;
+  overflow: visible;
+  box-shadow: 0 0 8px rgba(139,92,246,0.4), 0 0 16px rgba(167,139,250,0.15);
+}
+
+/* Soft shimmer sweep */
+.scroll-progress::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(255,255,255,0.45) 50%,
+    transparent 100%
+  );
+  background-size: 40% 100%;
+  background-repeat: no-repeat;
+  animation: premium-shine 2.4s ease-in-out infinite;
+}
+
+/* Leading edge dot */
+.progress-spark {
+  position: fixed;
+  top: -3px;
+  left: 0;
+  width: 3px;
+  height: 8px;
+  z-index: 201;
+  pointer-events: none;
+  opacity: 0;
+  transition: left 0.1s linear, opacity 0.3s ease;
+}
+
+.progress-spark::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: #fff;
+  border-radius: 2px;
+  box-shadow: 0 0 4px 1px #fff, 0 0 8px 3px #c084fc, 0 0 14px 5px rgba(139,92,246,0.5);
+}
+
+@keyframes premium-shine {
+  0%   { background-position: -40% 0; opacity: 0; }
+  20%  { opacity: 1; }
+  80%  { opacity: 1; }
+  100% { background-position: 140% 0; opacity: 0; }
 }
 
 /* ================================================
@@ -1729,18 +1793,78 @@ body::before {
    NEW — LANGUAGE SWITCHER
    ================================================ */
 
-.lang-switcher {
+/* Desktop dropdown */
+.lang-dropdown {
+  position: relative;
+}
+
+.lang-trigger {
   display: flex;
-  gap: 2px;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 11px;
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-full);
-  padding: 3px;
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  line-height: 1;
 }
 
+.lang-trigger:hover,
+.lang-dropdown.open .lang-trigger {
+  border-color: var(--violet-500);
+  color: var(--text-primary);
+}
+
+.lang-trigger__arrow {
+  transition: transform 0.2s ease;
+  opacity: 0.6;
+}
+
+.lang-dropdown.open .lang-trigger__arrow {
+  transform: rotate(180deg);
+}
+
+.lang-panel {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 58px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+  transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s;
+  z-index: 300;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+}
+
+.lang-dropdown.open .lang-panel {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Mobile pill row (stays expanded inside mobile menu) */
 .lang-switcher--mobile {
+  display: flex;
+  gap: 2px;
   background: rgba(14, 14, 28, 0.8);
-  border-color: var(--border);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  padding: 3px;
 }
 
 .lang-btn {
@@ -1753,6 +1877,8 @@ body::before {
   color: var(--text-muted);
   transition: all 0.25s ease;
   line-height: 1;
+  width: 100%;
+  text-align: center;
 }
 
 .lang-btn.active {
@@ -1797,7 +1923,7 @@ body::before {
     gap: 16px;
   }
 
-  .lang-switcher:not(.lang-switcher--mobile) {
+  .lang-dropdown {
     display: none;
   }
 }
@@ -2382,10 +2508,28 @@ body::before {
   white-space: nowrap;
 }
 
+.pack-item__price small {
+  font-size: 0.62rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-right: 2px;
+}
+
 .pack-item__period {
   font-size: 0.72rem;
   font-weight: 500;
   color: var(--text-muted);
+}
+
+.pack-summary__note {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-align: center;
+  margin-top: 10px;
+  line-height: 1.5;
+  opacity: 0.75;
 }
 
 /* ---- Summary panel ---- */

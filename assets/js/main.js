@@ -65,12 +65,17 @@
      SCROLL PROGRESS BAR
   ----------------------------------------------- */
 
-  const progressBar = document.getElementById('scrollProgress');
+  const progressBar   = document.getElementById('scrollProgress');
+  const progressSpark = document.getElementById('progressSpark');
 
   function updateProgress() {
-    const docHeight  = document.documentElement.scrollHeight - window.innerHeight;
-    const progress   = docHeight > 0 ? window.scrollY / docHeight : 0;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress  = docHeight > 0 ? window.scrollY / docHeight : 0;
     progressBar.style.transform = `scaleX(${progress})`;
+    if (progressSpark) {
+      progressSpark.style.left    = (progress * 100) + 'vw';
+      progressSpark.style.opacity = progress > 0.005 ? '1' : '0';
+    }
   }
 
   window.addEventListener('scroll', updateProgress, { passive: true });
@@ -296,13 +301,16 @@
     let total = 0;
     packLinesEl.innerHTML = '';
 
+    let hasApprox = false;
     selected.forEach((item) => {
       total += parseInt(item.dataset.price, 10);
-      const name  = item.querySelector('.pack-item__name').textContent;
-      const price = item.dataset.price;
-      const line  = document.createElement('div');
+      if (item.dataset.approx) hasApprox = true;
+      const name    = item.querySelector('.pack-item__name').textContent;
+      const price   = item.dataset.price;
+      const prefix  = item.dataset.approx ? 'desde ' : '';
+      const line    = document.createElement('div');
       line.className = 'pack-summary__line';
-      line.innerHTML = `<span class="pack-summary__line-name">${name}</span><span class="pack-summary__line-price">$${price}</span>`;
+      line.innerHTML = `<span class="pack-summary__line-name">${name}</span><span class="pack-summary__line-price">${prefix}$${price}</span>`;
       packLinesEl.appendChild(line);
     });
 
@@ -318,7 +326,7 @@
     const checkedRadio = document.querySelector('input[name="pack-mant"]:checked');
     const mantVal      = checkedRadio ? checkedRadio.value : '60';
 
-    packTotalEl.textContent = total > 0 ? '$' + total.toLocaleString('es') : '$0';
+    packTotalEl.textContent = total > 0 ? (hasApprox ? 'desde $' : '$') + total.toLocaleString('es') : '$0';
     if (!onlyAudits) packMantEl.textContent = '$' + mantVal + '/mes';
   }
 
