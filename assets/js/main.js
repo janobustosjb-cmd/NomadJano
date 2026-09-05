@@ -290,7 +290,7 @@
 
   function updatePack() {
     const selected    = document.querySelectorAll('.pack-item.pack-item--selected:not(.pack-item--radio)');
-    const auditIds    = ['audit-seo', 'audit-meta', 'audit-full'];
+    const auditIds    = ['audit-general'];
     const hasNonAudit = [...selected].some((el) => !auditIds.includes(el.dataset.id));
     const onlyAudits  = selected.length > 0 && !hasNonAudit;
 

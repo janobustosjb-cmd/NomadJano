@@ -19,8 +19,8 @@
   --violet-500:      #8b5cf6;
   --violet-400:      #a855f7;
   --violet-300:      #c084fc;
-  --violet-glow:     rgba(124, 58, 237, 0.25);
-  --violet-subtle:   rgba(124, 58, 237, 0.07);
+  --violet-glow:     rgba(124, 58, 237, 0.16);
+  --violet-subtle:   rgba(124, 58, 237, 0.06);
 
   --text-primary:    #f0f0f8;
   --text-secondary:  #9ca3af;
@@ -99,7 +99,7 @@ body::before {
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, var(--violet-500), var(--violet-300), #e879f9);
+  background: linear-gradient(135deg, var(--violet-500), var(--violet-300));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -163,15 +163,15 @@ body::before {
 }
 
 .btn--primary {
-  background: linear-gradient(135deg, var(--violet-600), var(--violet-400));
+  background: linear-gradient(135deg, var(--violet-700), var(--violet-500));
   color: #fff;
-  box-shadow: 0 0 32px var(--violet-glow), 0 2px 8px rgba(0,0,0,0.4);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.45), 0 0 16px var(--violet-glow);
 }
 
 .btn--primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 0 56px rgba(139, 92, 246, 0.4), 0 4px 16px rgba(0,0,0,0.4);
-  filter: brightness(1.08);
+  box-shadow: 0 6px 28px rgba(0,0,0,0.5), 0 0 24px rgba(139, 92, 246, 0.25);
+  filter: brightness(1.05);
 }
 
 .btn--ghost {
@@ -321,19 +321,19 @@ body::before {
 
 .nav__cta {
   padding: 9px 20px;
-  background: linear-gradient(135deg, var(--violet-600), var(--violet-400));
+  background: linear-gradient(135deg, var(--violet-700), var(--violet-500));
   border-radius: var(--radius-full);
   color: #fff !important;
   font-size: 0.85rem;
   font-weight: 600;
-  box-shadow: 0 0 20px var(--violet-glow);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.4);
   transition: all 0.3s var(--ease-out-expo) !important;
 }
 
 .nav__cta:hover {
   transform: translateY(-1px) !important;
-  box-shadow: 0 0 36px rgba(139, 92, 246, 0.45) !important;
-  filter: brightness(1.08);
+  box-shadow: 0 4px 18px rgba(0,0,0,0.45), 0 0 16px rgba(139, 92, 246, 0.25) !important;
+  filter: brightness(1.05);
 }
 
 .nav__cta::after { display: none !important; }
@@ -441,36 +441,26 @@ body::before {
 .hero__orb {
   position: absolute;
   border-radius: 50%;
-  filter: blur(100px);
+  filter: blur(130px);
   will-change: transform;
 }
 
 .hero__orb--1 {
   width: clamp(400px, 60vw, 700px);
   height: clamp(400px, 60vw, 700px);
-  background: radial-gradient(circle, rgba(109, 40, 217, 0.5), transparent 65%);
+  background: radial-gradient(circle, rgba(76, 29, 149, 0.4), transparent 65%);
   top: -20%;
   right: -10%;
-  animation: orb-drift-1 12s ease-in-out infinite;
+  animation: orb-drift-1 18s ease-in-out infinite;
 }
 
 .hero__orb--2 {
   width: clamp(300px, 40vw, 500px);
   height: clamp(300px, 40vw, 500px);
-  background: radial-gradient(circle, rgba(168, 85, 247, 0.35), transparent 65%);
+  background: radial-gradient(circle, rgba(109, 40, 217, 0.25), transparent 65%);
   bottom: -10%;
   left: -8%;
-  animation: orb-drift-2 14s ease-in-out infinite;
-}
-
-.hero__orb--3 {
-  width: clamp(150px, 20vw, 250px);
-  height: clamp(150px, 20vw, 250px);
-  background: radial-gradient(circle, rgba(192, 132, 252, 0.3), transparent 70%);
-  top: 45%;
-  left: 28%;
-  animation: orb-drift-3 9s ease-in-out infinite;
-  filter: blur(60px);
+  animation: orb-drift-2 20s ease-in-out infinite;
 }
 
 @keyframes orb-drift-1 {
@@ -485,17 +475,12 @@ body::before {
   65%       { transform: translate(-30px, 30px) scale(0.97); }
 }
 
-@keyframes orb-drift-3 {
-  0%, 100% { transform: translate(0, 0); }
-  50%       { transform: translate(-20px, -30px); }
-}
-
 .hero__grid {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(139, 92, 246, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(139, 92, 246, 0.04) 1px, transparent 1px);
+    linear-gradient(rgba(139, 92, 246, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(139, 92, 246, 0.025) 1px, transparent 1px);
   background-size: 56px 56px;
   mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 40%, transparent 100%);
   -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 40%, transparent 100%);
@@ -554,7 +539,7 @@ body::before {
 }
 
 .hero__title-gradient {
-  background: linear-gradient(135deg, var(--violet-400), var(--violet-300), #e879f9);
+  background: linear-gradient(135deg, var(--violet-400), var(--violet-300));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -724,7 +709,7 @@ body::before {
   left: 0;
   right: 0;
   height: 2px;
-  background: linear-gradient(90deg, var(--violet-700), var(--violet-400), #e879f9);
+  background: linear-gradient(90deg, var(--violet-700), var(--violet-400));
 }
 
 .servicio-card__icon {
@@ -1370,7 +1355,7 @@ body::before {
   left: 0;
   right: 0;
   height: 2px;
-  background: linear-gradient(90deg, var(--violet-700), var(--violet-400), #e879f9);
+  background: linear-gradient(90deg, var(--violet-700), var(--violet-400));
 }
 
 .contacto-calendly:hover {
@@ -1991,7 +1976,7 @@ body::before {
   left: 0;
   right: 0;
   height: 2px;
-  background: linear-gradient(90deg, var(--violet-700), var(--violet-400), #e879f9);
+  background: linear-gradient(90deg, var(--violet-700), var(--violet-400));
 }
 
 .precio-card--featured:hover {
@@ -2174,7 +2159,7 @@ body::before {
   left: 0;
   right: 0;
   height: 2px;
-  background: linear-gradient(90deg, var(--violet-700), var(--violet-400), #e879f9);
+  background: linear-gradient(90deg, var(--violet-700), var(--violet-400));
 }
 
 .mant-card__top {
@@ -2553,7 +2538,7 @@ body::before {
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 2px;
-  background: linear-gradient(90deg, var(--violet-700), var(--violet-400), #e879f9);
+  background: linear-gradient(90deg, var(--violet-700), var(--violet-400));
 }
 
 .pack-summary__title {
