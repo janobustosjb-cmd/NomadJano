@@ -33,6 +33,7 @@ const translations = {
     's01.title':           'Tu negocio en piloto automático.',
     's01.titleGradient':   'Sin tecnicismos.',
     's01.subtitle':        'No importa si tenés un hostel en Buenos Aires o un café en Lisboa. Construyo los sistemas para que crezcas sin que dependas de mí para siempre.',
+    's01.cta':             'Quiero esto para mi negocio →',
 
     'srv01.title':         'Más clientes,',
     'srv01.titleLine2':    'sin más esfuerzo',
@@ -233,6 +234,7 @@ const translations = {
     's01.title':           'Your business on autopilot.',
     's01.titleGradient':   'No tech talk.',
     's01.subtitle':        'Whether you have a hostel in Buenos Aires or a café in Lisbon. I build the systems so you can grow without depending on me forever.',
+    's01.cta':             'I want this for my business →',
 
     'srv01.title':         'More clients,',
     'srv01.titleLine2':    'without more effort',
@@ -434,6 +436,7 @@ const translations = {
     's01.title':           'Seu negócio no piloto automático.',
     's01.titleGradient':   'Sem termos técnicos.',
     's01.subtitle':        'Não importa se você tem um hostel em Buenos Aires ou um café em Lisboa. Construo os sistemas para você crescer sem depender de mim para sempre.',
+    's01.cta':             'Quero isso para o meu negócio →',
 
     'srv01.title':         'Mais clientes,',
     'srv01.titleLine2':    'sem mais esforço',
@@ -635,6 +638,7 @@ const translations = {
     's01.title':           'Il tuo business in pilota automatico.',
     's01.titleGradient':   'Senza tecnicismi.',
     's01.subtitle':        'Che tu abbia un hostel a Buenos Aires o un caffè a Lisbona. Costruisco i sistemi perché tu possa crescere senza dipendere da me per sempre.',
+    's01.cta':             'Voglio questo per il mio business →',
 
     'srv01.title':         'Più clienti,',
     'srv01.titleLine2':    'senza più sforzo',

@@ -191,7 +191,6 @@
   const heroVisual   = document.querySelector('.hero__visual');
   const orbs        = document.querySelectorAll('.hero__orb');
   const heroSection = document.querySelector('.hero');
-
   if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
     let ticking = false;
 
@@ -221,6 +220,134 @@
       }
     }, { passive: true });
   }
+
+  /* -----------------------------------------------
+     RUNE FIELD — cursor-reactive symbol swarm
+  ----------------------------------------------- */
+
+  (function initRuneField() {
+    const canvas = document.getElementById('runeField');
+    if (!canvas || !window.matchMedia('(prefers-reduced-motion: no-preference)').matches) return;
+
+    const ctx = canvas.getContext('2d');
+    const SHAPES     = ['triangle', 'chevron', 'diamond', 'zigzag', 'ring'];
+    const COUNT      = 170;
+    const REVEAL     = 190;
+    const INFLUENCE  = 150;
+    const PUSH       = 5;
+    const SPRING     = 0.05;
+    const DAMPING    = 0.9;
+
+    let width, height, dpr, particles = [];
+    let mouseX = -9999, mouseY = -9999;
+
+    function scatter() {
+      particles = Array.from({ length: COUNT }, () => {
+        const baseX = Math.random() * width;
+        const baseY = Math.random() * height;
+        return {
+          baseX, baseY, x: baseX, y: baseY, vx: 0, vy: 0,
+          size: 8 + Math.random() * 7,
+          angle: Math.random() * Math.PI * 2,
+          spin: (Math.random() - 0.5) * 0.004,
+          shape: Math.floor(Math.random() * SHAPES.length),
+          opacityBase: 0.5 + Math.random() * 0.5,
+          opacity: 0
+        };
+      });
+    }
+
+    function resize() {
+      dpr    = Math.min(window.devicePixelRatio || 1, 2);
+      width  = window.innerWidth;
+      height = window.innerHeight;
+      canvas.width  = width * dpr;
+      canvas.height = height * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      scatter();
+    }
+
+    function drawRune(p) {
+      if (p.opacity <= 0.01) return;
+
+      ctx.save();
+      ctx.translate(p.x, p.y);
+      ctx.rotate(p.angle);
+      ctx.strokeStyle = `rgba(196, 165, 255, ${p.opacity})`;
+      ctx.lineWidth   = 1.3;
+      ctx.shadowColor = 'rgba(139, 92, 246, 0.5)';
+      ctx.shadowBlur  = 2;
+      const s = p.size;
+      ctx.beginPath();
+      switch (SHAPES[p.shape]) {
+        case 'triangle':
+          ctx.moveTo(0, -s / 2); ctx.lineTo(s / 2, s / 2); ctx.lineTo(-s / 2, s / 2); ctx.closePath();
+          break;
+        case 'chevron':
+          ctx.moveTo(-s / 2, s / 3); ctx.lineTo(0, -s / 2); ctx.lineTo(s / 2, s / 3);
+          break;
+        case 'diamond':
+          ctx.moveTo(0, -s / 2); ctx.lineTo(s / 2, 0); ctx.lineTo(0, s / 2); ctx.lineTo(-s / 2, 0); ctx.closePath();
+          break;
+        case 'zigzag':
+          ctx.moveTo(-s / 2, -s / 3); ctx.lineTo(-s / 6, s / 3); ctx.lineTo(s / 6, -s / 3); ctx.lineTo(s / 2, s / 3);
+          break;
+        case 'ring':
+          ctx.arc(0, 0, s / 3, 0, Math.PI * 2);
+          break;
+      }
+      ctx.stroke();
+      ctx.restore();
+    }
+
+    function tick() {
+      ctx.clearRect(0, 0, width, height);
+
+      particles.forEach((p) => {
+        const dx   = p.x - mouseX;
+        const dy   = p.y - mouseY;
+        const dist = Math.sqrt(dx * dx + dy * dy) || 1;
+
+        if (dist < INFLUENCE) {
+          const force = (1 - dist / INFLUENCE) * PUSH;
+          p.vx += (dx / dist) * force;
+          p.vy += (dy / dist) * force;
+        }
+
+        // Spring back toward resting position
+        p.vx += (p.baseX - p.x) * SPRING;
+        p.vy += (p.baseY - p.y) * SPRING;
+
+        p.vx *= DAMPING;
+        p.vy *= DAMPING;
+        p.x  += p.vx;
+        p.y  += p.vy;
+        p.angle += p.spin;
+
+        // Only visible near the cursor — fades in as it gets close
+        const proximity = Math.max(0, 1 - dist / REVEAL);
+        p.opacity = proximity * proximity * p.opacityBase;
+
+        drawRune(p);
+      });
+
+      requestAnimationFrame(tick);
+    }
+
+    window.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    }, { passive: true });
+
+    window.addEventListener('mouseleave', () => {
+      mouseX = -9999;
+      mouseY = -9999;
+    });
+
+    window.addEventListener('resize', resize, { passive: true });
+    resize();
+    requestAnimationFrame(tick);
+  })();
 
   /* -----------------------------------------------
      CURSOR GLOW — desktop only
@@ -376,7 +503,7 @@
   }
 
   // Init
-  updatePack();
+  if (packLinesEl) updatePack();
 
   /* -----------------------------------------------
      SCREENSHOT IMAGES — fade in on load
