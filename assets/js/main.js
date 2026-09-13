@@ -66,16 +66,11 @@
   ----------------------------------------------- */
 
   const progressBar   = document.getElementById('scrollProgress');
-  const progressSpark = document.getElementById('progressSpark');
 
   function updateProgress() {
     const docHeight = document.documentElement.scrollHeight - window.innerHeight;
     const progress  = docHeight > 0 ? window.scrollY / docHeight : 0;
     progressBar.style.transform = `scaleX(${progress})`;
-    if (progressSpark) {
-      progressSpark.style.left    = (progress * 100) + 'vw';
-      progressSpark.style.opacity = progress > 0.005 ? '1' : '0';
-    }
   }
 
   window.addEventListener('scroll', updateProgress, { passive: true });
@@ -106,7 +101,7 @@
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target
-          .querySelectorAll('.servicio-card, .proyecto-card, .numero')
+          .querySelectorAll('.servicio-card, .proyecto-card')
           .forEach((card) => card.classList.add('is-visible'));
         gridObserver.unobserve(entry.target);
       }
@@ -114,7 +109,7 @@
   }, { threshold: 0.06, rootMargin: '0px 0px -32px 0px' });
 
   document.querySelectorAll(
-    '.servicios__grid, .trabajo__grid, .numeros__grid'
+    '.servicios__grid, .trabajo__grid'
   ).forEach((g) => gridObserver.observe(g));
 
   /* -----------------------------------------------
@@ -176,7 +171,7 @@
         entry.target.querySelectorAll('[data-count-target]').forEach((el) => {
           setTimeout(() => animateCountUp(el), 200);
         });
-        entry.target.querySelectorAll('.numero__value--typewriter').forEach((el) => {
+        entry.target.querySelectorAll('.count-value--typewriter').forEach((el) => {
           setTimeout(() => animateTypewriter(el), 200);
         });
         countObserver.unobserve(entry.target);
@@ -184,14 +179,16 @@
     });
   }, { threshold: 0.3 });
 
-  const numerosGrid = document.querySelector('.numeros__grid');
-  if (numerosGrid) countObserver.observe(numerosGrid);
+  const heroStatsGrid = document.querySelector('.hero__panel-stats');
+  if (heroStatsGrid) countObserver.observe(heroStatsGrid);
 
   /* -----------------------------------------------
      PARALLAX — hero content + orbs on scroll
   ----------------------------------------------- */
 
   const heroContent = document.getElementById('heroContent');
+  const heroText     = document.querySelector('.hero__text');
+  const heroVisual   = document.querySelector('.hero__visual');
   const orbs        = document.querySelectorAll('.hero__orb');
   const heroSection = document.querySelector('.hero');
 
@@ -204,11 +201,12 @@
           const y          = window.scrollY;
           const heroHeight = heroSection ? heroSection.offsetHeight : 800;
 
-          // Hero content: fade + slide up as user scrolls
+          // Hero: text and visual drift at different speeds for depth, fade together
           if (heroContent && y < heroHeight) {
             const progress = y / heroHeight;
-            heroContent.style.transform = `translateY(${y * 0.25}px)`;
-            heroContent.style.opacity   = Math.max(0, 1 - progress * 1.6);
+            if (heroText)   heroText.style.transform   = `translateY(${y * 0.3}px)`;
+            if (heroVisual) heroVisual.style.transform = `translateY(${y * 0.14}px)`;
+            heroContent.style.opacity = Math.max(0, 1 - progress * 1.6);
           }
 
           // Orbs: individual parallax speeds

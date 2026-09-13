@@ -116,7 +116,6 @@
 
   <!-- PROGRESS BAR -->
   <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
-  <div class="progress-spark" id="progressSpark" aria-hidden="true"></div>
 
   <!-- NAV -->
   <nav class="nav" id="nav">
@@ -176,20 +175,54 @@
     </div>
 
     <div class="hero__content" id="heroContent">
-      <div class="hero__badge">
-        <span class="hero__badge-dot"></span>
-        <span data-i18n="hero.badge">Disponible para nuevos proyectos</span>
+      <div class="hero__text">
+        <div class="hero__badge">
+          <span class="hero__badge-dot"></span>
+          <span data-i18n="hero.badge">Disponible para nuevos proyectos</span>
+        </div>
+        <h1 class="hero__title">
+          <span data-i18n="hero.title">Yo me muevo,</span><br>
+          <span class="hero__title-gradient" data-i18n="hero.titleGradient">y mis sistemas se mueven por vos.</span>
+        </h1>
+        <p class="hero__subtitle" data-i18n="hero.subtitle">
+          Sistemas digitales que trabajan por ti: más clientes, menos carga, sin que tengas que entender de tecnología.
+        </p>
+        <div class="hero__actions">
+          <a href="#contacto" class="btn btn--primary" data-i18n="hero.cta1">Hablemos →</a>
+          <a href="#servicios" class="btn btn--ghost" data-i18n="hero.cta2">Ver cómo funciona</a>
+        </div>
       </div>
-      <h1 class="hero__title">
-        <span data-i18n="hero.title">Yo me muevo,</span><br>
-        <span class="hero__title-gradient" data-i18n="hero.titleGradient">y mis sistemas se mueven por vos.</span>
-      </h1>
-      <p class="hero__subtitle" data-i18n="hero.subtitle">
-        Sistemas digitales que trabajan por ti: más clientes, menos carga, sin que tengas que entender de tecnología.
-      </p>
-      <div class="hero__actions">
-        <a href="#contacto" class="btn btn--primary" data-i18n="hero.cta1">Hablemos →</a>
-        <a href="#servicios" class="btn btn--ghost" data-i18n="hero.cta2">Ver cómo funciona</a>
+
+      <div class="hero__visual">
+        <div class="hero__panel">
+          <div class="hero__panel-header">
+            <span class="hero__panel-dot"></span>
+            <span data-i18n="hero.panelLabel">Sistemas en producción</span>
+          </div>
+          <div class="hero__panel-stats">
+            <div class="hero__panel-stat">
+              <strong class="count-value" data-count-target="40" data-count-prefix="+" data-count-suffix="%">+40%</strong>
+              <span data-i18n="hero.panelStat1Label">visibilidad</span>
+            </div>
+            <div class="hero__panel-stat">
+              <strong class="count-value count-value--typewriter" data-i18n="hero.panelStat2Val">3–5h</strong>
+              <span data-i18n="hero.panelStat2Label">ahorradas por semana</span>
+            </div>
+            <div class="hero__panel-stat">
+              <strong class="count-value count-value--typewriter" data-i18n="hero.panelStat3Val">24/7</strong>
+              <span data-i18n="hero.panelStat3Label">respuesta automática</span>
+            </div>
+          </div>
+          <div class="hero__panel-footer">
+            <span data-i18n="hero.panelFooter">Sistemas activos en</span>
+            <div class="hero__panel-clients">
+              <span>Luchito's</span>
+              <span>Lucesita Pastas</span>
+              <span>Taller JP</span>
+              <span>Miami Drip</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -277,7 +310,6 @@
             Tu negocio siempre activo online. Contenido generado y publicado con sistemas inteligentes que hablan con la voz de tu marca, todos los días.
           </p>
           <ul class="servicio-card__tags">
-            <li data-i18n="srv03.tag1">Contenido diario sin esfuerzo</li>
             <li data-i18n="srv03.tag2">Respuestas automáticas 24/7</li>
             <li data-i18n="srv03.tag3">Marca siempre presente</li>
           </ul>
@@ -299,31 +331,7 @@
           Vendo <em>tiempo libre</em>, más clientes<br>
           y menos dolores de cabeza."
         </p>
-        <span class="manifiesto__author" data-i18n="manifiesto.author">— Jano, en algún rincón del mundo</span>
-      </div>
-    </div>
-  </section>
-
-  <div class="section-divider" role="separator"></div>
-
-  <!-- ======================================
-       NÚMEROS
-  ======================================= -->
-  <section class="numeros">
-    <div class="container">
-      <div class="numeros__grid">
-        <div class="numero reveal-up">
-          <span class="numero__value" data-count-target="40" data-count-prefix="+" data-count-suffix="%" data-i18n="num01.value">+40%</span>
-          <span class="numero__label" data-i18n="num01.label">más visibilidad con presencia digital optimizada</span>
-        </div>
-        <div class="numero reveal-up">
-          <span class="numero__value numero__value--typewriter" data-i18n="num02.value">3–5h</span>
-          <span class="numero__label" data-i18n="num02.label">ahorradas por semana con flujos automatizados</span>
-        </div>
-        <div class="numero reveal-up">
-          <span class="numero__value" data-count-target="0" data-i18n="num03.value">0</span>
-          <span class="numero__label" data-i18n="num03.label">tecnicismos que tenés que entender</span>
-        </div>
+        <span class="manifiesto__author" data-i18n="manifiesto.author">— Jano</span>
       </div>
     </div>
   </section>
@@ -350,7 +358,7 @@
           <div class="proyecto-card__visual proyecto-card__visual--screenshot">
             <div class="proyecto-card__skeleton"></div>
             <img
-              src="https://api.microlink.io/?url=https%3A%2F%2Fluchitos.vercel.app%2F&screenshot=true&meta=false&embed=screenshot.url"
+              src="https://api.microlink.io/?url=https%3A%2F%2Fluchitos.vercel.app%2F&screenshot=true&meta=false&viewport.width=1280&viewport.height=720&embed=screenshot.url"
               alt="Preview Luchito's"
               class="proyecto-card__screenshot"
               loading="lazy"
@@ -372,7 +380,7 @@
           <div class="proyecto-card__visual proyecto-card__visual--screenshot">
             <div class="proyecto-card__skeleton"></div>
             <img
-              src="https://api.microlink.io/?url=https%3A%2F%2Flucesitapastas.vercel.app%2F&screenshot=true&meta=false&embed=screenshot.url"
+              src="https://api.microlink.io/?url=https%3A%2F%2Flucesitapastas.vercel.app%2F&screenshot=true&meta=false&viewport.width=1280&viewport.height=720&embed=screenshot.url"
               alt="Preview Lucesita Pastas"
               class="proyecto-card__screenshot"
               loading="lazy"
@@ -394,7 +402,7 @@
           <div class="proyecto-card__visual proyecto-card__visual--screenshot">
             <div class="proyecto-card__skeleton"></div>
             <img
-              src="https://api.microlink.io/?url=https%3A%2F%2Ftallerjp-flax.vercel.app%2F&screenshot=true&meta=false&embed=screenshot.url"
+              src="https://api.microlink.io/?url=https%3A%2F%2Ftallerjp-flax.vercel.app%2F&screenshot=true&meta=false&viewport.width=1280&viewport.height=720&embed=screenshot.url"
               alt="Preview Taller JP"
               class="proyecto-card__screenshot"
               loading="lazy"
@@ -416,7 +424,7 @@
           <div class="proyecto-card__visual proyecto-card__visual--screenshot">
             <div class="proyecto-card__skeleton"></div>
             <img
-              src="https://api.microlink.io/?url=https%3A%2F%2Fmiami-drip-barbershop-site.vercel.app%2F&screenshot=true&meta=false&embed=screenshot.url"
+              src="https://api.microlink.io/?url=https%3A%2F%2Fmiami-drip-barbershop-site.vercel.app%2F&screenshot=true&meta=false&viewport.width=1280&viewport.height=720&embed=screenshot.url"
               alt="Preview Miami Drip Barbershop"
               class="proyecto-card__screenshot"
               loading="lazy"
@@ -459,33 +467,7 @@
 
         <div class="pack-services reveal-up">
 
-          <!-- Auditorías -->
-          <div class="pack-category">
-            <div class="pack-category__header">
-              <div class="pack-category__icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="11" cy="11" r="8"/>
-                  <line x1="21" y1="21" x2="16.65" y2="16.65"/>
-                </svg>
-              </div>
-              <div>
-                <h3 class="pack-category__name" data-i18n="pack.auditTitle">Auditorías</h3>
-                <p class="pack-category__hint" data-i18n="pack.auditHint">Diagnóstico de tu presencia actual</p>
-              </div>
-            </div>
-            <div class="pack-items">
-              <button class="pack-item" data-id="audit-general" data-price="180" type="button">
-                <div class="pack-item__check"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="2 7 5.5 10.5 12 3"/></svg></div>
-                <div class="pack-item__info">
-                  <span class="pack-item__name" data-i18n="pack.item.auditGeneral.name">Auditoría general de negocio e imagen</span>
-                  <span class="pack-item__desc" data-i18n="pack.item.auditGeneral.desc">SEO local, presencia digital, redes y recomendaciones en un solo diagnóstico</span>
-                </div>
-                <span class="pack-item__price">$180</span>
-              </button>
-            </div>
-          </div>
-
-          <!-- Presencia + Automatizaciones -->
+          <!-- Tu sistema (auditoría + web + automatización) -->
           <div class="pack-category">
             <div class="pack-category__header">
               <div class="pack-category__icon">
@@ -497,26 +479,34 @@
                 </svg>
               </div>
               <div>
-                <h3 class="pack-category__name">Tu sistema digital</h3>
-                <p class="pack-category__hint">Elegí los servicios que necesita tu negocio</p>
+                <h3 class="pack-category__name" data-i18n="pack.systemTitle">Tu sistema</h3>
+                <p class="pack-category__hint" data-i18n="pack.systemHint">Auditoría, web y automatización — elegí lo que necesita tu negocio</p>
               </div>
             </div>
             <div class="pack-items">
-              <button class="pack-item" data-id="web" data-price="300" data-approx="true" type="button">
+              <button class="pack-item" data-id="audit-general" data-price="180" type="button">
+                <div class="pack-item__check"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="2 7 5.5 10.5 12 3"/></svg></div>
+                <div class="pack-item__info">
+                  <span class="pack-item__name" data-i18n="pack.item.auditGeneral.name">Auditoría general de negocio e imagen</span>
+                  <span class="pack-item__desc" data-i18n="pack.item.auditGeneral.desc">SEO local, presencia digital, redes y recomendaciones en un solo diagnóstico</span>
+                </div>
+                <span class="pack-item__price">$180</span>
+              </button>
+              <button class="pack-item" data-id="web" data-price="600" data-approx="true" type="button">
                 <div class="pack-item__check"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="2 7 5.5 10.5 12 3"/></svg></div>
                 <div class="pack-item__info">
                   <span class="pack-item__name" data-i18n="pack.item.web.name">Landing page / Web</span>
                   <span class="pack-item__desc" data-i18n="pack.item.web.desc">Diseño y desarrollo, optimizada para convertir</span>
                 </div>
-                <span class="pack-item__price"><small>desde</small> $300</span>
+                <span class="pack-item__price"><small>desde</small> $600</span>
               </button>
-              <button class="pack-item" data-id="automatizacion" data-price="600" data-approx="true" type="button">
+              <button class="pack-item" data-id="automatizacion" data-price="1200" data-approx="true" type="button">
                 <div class="pack-item__check"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="2 7 5.5 10.5 12 3"/></svg></div>
                 <div class="pack-item__info">
                   <span class="pack-item__name" data-i18n="pack.item.automation.name">Automatización</span>
                   <span class="pack-item__desc" data-i18n="pack.item.automation.desc">Bot de WhatsApp, emails y flujos que responden y confirman por vos, 24/7</span>
                 </div>
-                <span class="pack-item__price"><small>desde</small> $600</span>
+                <span class="pack-item__price"><small>desde</small> $1200</span>
               </button>
             </div>
           </div>
@@ -760,8 +750,6 @@
       </div>
       <div class="footer__bottom">
         <span data-i18n="footer.copyright">© 2026 NomadJano</span>
-        <span class="footer__separator">·</span>
-        <span data-i18n="footer.made">Hecho desde algún rincón del mundo</span>
       </div>
     </div>
   </footer>
