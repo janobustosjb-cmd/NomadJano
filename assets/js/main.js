@@ -230,13 +230,18 @@
     if (!canvas || !window.matchMedia('(prefers-reduced-motion: no-preference)').matches) return;
 
     const ctx = canvas.getContext('2d');
-    const SHAPES     = ['triangle', 'chevron', 'diamond', 'zigzag', 'ring'];
+    const RUNE_COUNT = 11;
     const COUNT      = 170;
-    const REVEAL     = 190;
-    const INFLUENCE  = 150;
-    const PUSH       = 5;
-    const SPRING     = 0.05;
-    const DAMPING    = 0.9;
+    const INFLUENCE  = 170;
+    const PUSH       = 7;
+    const SPRING     = 0.08;
+    const DAMPING    = 0.82;
+
+    const runeImages = Array.from({ length: RUNE_COUNT }, (_, i) => {
+      const img = new Image();
+      img.src = `./assets/runes/rune-${String(i + 1).padStart(2, '0')}.png`;
+      return img;
+    });
 
     let width, height, dpr, particles = [];
     let mouseX = -9999, mouseY = -9999;
@@ -245,12 +250,13 @@
       particles = Array.from({ length: COUNT }, () => {
         const baseX = Math.random() * width;
         const baseY = Math.random() * height;
+        const img   = runeImages[Math.floor(Math.random() * runeImages.length)];
         return {
           baseX, baseY, x: baseX, y: baseY, vx: 0, vy: 0,
-          size: 8 + Math.random() * 7,
+          size: 14 + Math.random() * 12,
           angle: Math.random() * Math.PI * 2,
           spin: (Math.random() - 0.5) * 0.004,
-          shape: Math.floor(Math.random() * SHAPES.length),
+          img,
           opacityBase: 0.5 + Math.random() * 0.5,
           opacity: 0
         };
@@ -263,40 +269,25 @@
       height = window.innerHeight;
       canvas.width  = width * dpr;
       canvas.height = height * dpr;
+      canvas.style.width  = width + 'px';
+      canvas.style.height = height + 'px';
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       scatter();
     }
 
     function drawRune(p) {
-      if (p.opacity <= 0.01) return;
+      if (p.opacity <= 0.01 || !p.img.naturalWidth) return;
+
+      const h = p.size;
+      const w = h * (p.img.naturalWidth / p.img.naturalHeight);
 
       ctx.save();
       ctx.translate(p.x, p.y);
       ctx.rotate(p.angle);
-      ctx.strokeStyle = `rgba(196, 165, 255, ${p.opacity})`;
-      ctx.lineWidth   = 1.3;
-      ctx.shadowColor = 'rgba(139, 92, 246, 0.5)';
+      ctx.globalAlpha = p.opacity;
+      ctx.shadowColor = 'rgba(210, 210, 225, 0.5)';
       ctx.shadowBlur  = 2;
-      const s = p.size;
-      ctx.beginPath();
-      switch (SHAPES[p.shape]) {
-        case 'triangle':
-          ctx.moveTo(0, -s / 2); ctx.lineTo(s / 2, s / 2); ctx.lineTo(-s / 2, s / 2); ctx.closePath();
-          break;
-        case 'chevron':
-          ctx.moveTo(-s / 2, s / 3); ctx.lineTo(0, -s / 2); ctx.lineTo(s / 2, s / 3);
-          break;
-        case 'diamond':
-          ctx.moveTo(0, -s / 2); ctx.lineTo(s / 2, 0); ctx.lineTo(0, s / 2); ctx.lineTo(-s / 2, 0); ctx.closePath();
-          break;
-        case 'zigzag':
-          ctx.moveTo(-s / 2, -s / 3); ctx.lineTo(-s / 6, s / 3); ctx.lineTo(s / 6, -s / 3); ctx.lineTo(s / 2, s / 3);
-          break;
-        case 'ring':
-          ctx.arc(0, 0, s / 3, 0, Math.PI * 2);
-          break;
-      }
-      ctx.stroke();
+      ctx.drawImage(p.img, -w / 2, -h / 2, w, h);
       ctx.restore();
     }
 
@@ -304,12 +295,13 @@
       ctx.clearRect(0, 0, width, height);
 
       particles.forEach((p) => {
-        const dx   = p.x - mouseX;
-        const dy   = p.y - mouseY;
-        const dist = Math.sqrt(dx * dx + dy * dy) || 1;
+        const dx       = p.x - mouseX;
+        const dy       = p.y - mouseY;
+        const dist     = Math.sqrt(dx * dx + dy * dy) || 1;
+        const proximity = Math.max(0, 1 - dist / INFLUENCE);
 
-        if (dist < INFLUENCE) {
-          const force = (1 - dist / INFLUENCE) * PUSH;
+        if (proximity > 0) {
+          const force = proximity * PUSH;
           p.vx += (dx / dist) * force;
           p.vy += (dy / dist) * force;
         }
@@ -324,8 +316,7 @@
         p.y  += p.vy;
         p.angle += p.spin;
 
-        // Only visible near the cursor — fades in as it gets close
-        const proximity = Math.max(0, 1 - dist / REVEAL);
+        // Visibility tracks the same proximity that drives the push — stays in sync
         p.opacity = proximity * proximity * p.opacityBase;
 
         drawRune(p);
